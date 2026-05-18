@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9FB5C2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0mm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <edu.hitsz.widget.FlowBackgroundView
+            android:id="@+id/flowBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/vBlurMask"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#33091622"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gPriceLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gSkinLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gSelectLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <!-- 左上角 COINS -->
+        <LinearLayout
+            android:id="@+id/layoutCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCoinsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:src="@drawable/img_shop_coins_label" />
+
+            <edu.hitsz.widget.DigitTextView
+                android:id="@+id/digitCoinsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <!-- 未拥有时的价格组件 -->
+        <FrameLayout
+            android:id="@+id/layoutPriceBox"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintWidth_percent="0.38"
+            app:layout_constraintTop_toTopOf="@id/gPriceLine"
+            app:layout_constraintBottom_toBottomOf="@id/gPriceLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivPriceBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_shop_price_bg" />
+
+            <LinearLayout
+                android:id="@+id/layoutPriceContent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <edu.hitsz.widget.DigitTextView
+                    android:id="@+id/digitPriceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:contentDescription="@null" />
+
+                <ImageView
+                    android:id="@+id/ivDollar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="2dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/img_shop_dollar" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 已拥有时的 POSESSED 组件 -->
+        <ImageView
+            android:id="@+id/ivPricePossessed"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_shop_posessed"
+            android:visibility="gone"
+            app:layout_constraintWidth_percent="0.38"
+            app:layout_constraintTop_toTopOf="@id/gPriceLine"
+            app:layout_constraintBottom_toBottomOf="@id/gPriceLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 皮肤圆形组件 -->
+        <FrameLayout
+            android:id="@+id/layoutSkinBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.46"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@id/gSkinLine"
+            app:layout_constraintBottom_toBottomOf="@id/gSkinLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivSkinCircleBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_shop_circle_bg" />
+
+            <ImageView
+                android:id="@+id/ivSkin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/ivArrowLeft"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_shop_arrow_left"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintTop_toTopOf="@id/layoutSkinBox"
+            app:layout_constraintBottom_toBottomOf="@id/layoutSkinBox"
+            app:layout_constraintEnd_toStartOf="@id/layoutSkinBox" />
+
+        <ImageView
+            android:id="@+id/ivArrowRight"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_shop_arrow_right"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintTop_toTopOf="@id/layoutSkinBox"
+            app:layout_constraintBottom_toBottomOf="@id/layoutSkinBox"
+            app:layout_constraintStart_toEndOf="@id/layoutSkinBox" />
+
+        <!-- SELECTED / SELECT / BUY -->
+        <ImageView
+            android:id="@+id/ivSelectAction"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_shop_selected"
+            app:layout_constraintWidth_percent="0.42"
+            app:layout_constraintTop_toTopOf="@id/gSelectLine"
+            app:layout_constraintBottom_toBottomOf="@id/gSelectLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

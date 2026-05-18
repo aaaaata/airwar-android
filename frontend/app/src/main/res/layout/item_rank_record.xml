@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rankRowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <FrameLayout
+        android:id="@+id/rankBox"
+        android:layout_width="52dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivRankBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_rank_index_bg"
+            android:contentDescription="@null" />
+
+        <edu.hitsz.widget.DigitTextView
+            android:id="@+id/digitRank"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contentBox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/ivContentBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_rank_content_bg"
+            android:contentDescription="@null" />
+
+        <LinearLayout
+            android:id="@+id/rankContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:includeFontPadding="false"
+                android:text="name"
+                android:textColor="#111111"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/scoreBox"
+                android:layout_width="72dp"
+                android:layout_height="match_parent">
+
+                <edu.hitsz.widget.DigitTextView
+                    android:id="@+id/digitScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <edu.hitsz.widget.RoundCornerImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_avatar_placeholder"
+                android:contentDescription="@null" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

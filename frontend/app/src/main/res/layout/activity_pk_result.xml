@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootPkResult"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9FB5C2">
+
+    <FrameLayout
+        android:id="@+id/innerScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0mm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <edu.hitsz.widget.FlowBackgroundView
+            android:id="@+id/flowBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/resultPageContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/panelResult"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.78"
+                app:layout_constraintDimensionRatio="310:208"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgResultPanelBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_pk_result_panel" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/resultContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- 胜者信息组：整体居中 -->
+                    <LinearLayout
+                        android:id="@+id/winnerCenterGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <edu.hitsz.widget.RoundCornerImageView
+                            android:id="@+id/ivWinnerAvatar"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_avatar_placeholder" />
+
+                        <LinearLayout
+                            android:id="@+id/winnerInfoGroup"
+                            android:layout_width="120dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="24dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvWinnerName"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:text="USER1"
+                                android:textColor="#111111"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgWin"
+                                android:layout_width="110dp"
+                                android:layout_height="36dp"
+                                android:contentDescription="@null"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/img_win" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/btnBackToMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:contentDescription="@null"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/btn_back_to_menu"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9FB5C2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0mm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ivStaticBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_menu_initial"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/vBlurMask"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#66091622"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/loginPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            app:layout_constraintWidth_percent="0.86"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivLoginPanelBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_login_panel_bg" />
+
+            <LinearLayout
+                android:id="@+id/loginContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="56dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivLoginTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_login_title" />
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_login_input"
+                    android:hint="username"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textColorHint="#888888" />
+
+                <FrameLayout
+                    android:id="@+id/passwordBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_login_input"
+                        android:hint="password"
+                        android:inputType="textPassword"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="44dp"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textColorHint="#888888" />
+
+                    <ImageView
+                        android:id="@+id/ivPasswordEye"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@null"
+                        android:padding="5dp"
+                        android:src="@android:drawable/ic_menu_view" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/ivChooseAvatarLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_choose_avatar_for_register" />
+
+                <LinearLayout
+                    android:id="@+id/avatarContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar1" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_selected" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_1" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar2" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_normal" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_2" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar3" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_normal" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_3" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar4" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_normal" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_4" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar5" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_normal" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_5" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                        <edu.hitsz.widget.RoundCornerImageView android:id="@+id/ivAvatar6" android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:background="@drawable/bg_avatar_normal" android:contentDescription="@null" android:padding="3dp" android:scaleType="centerCrop" android:src="@drawable/avatar_6" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loginButtonRow"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_login"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_btn_login" />
+
+                <ImageView
+                    android:id="@+id/btn_register"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_btn_register" />
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
