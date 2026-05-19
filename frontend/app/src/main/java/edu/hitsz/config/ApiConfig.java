@@ -9,7 +9,9 @@ public class ApiConfig {
     //云端连接配置
     // 服务器基础地址：切换云端/本地调试时只需要改这一处。
     public static final String BASE_URL = "http://120.77.207.97:8081";
+    //自己部署云端时，BASE_URL = "http://云服务器公网IP:8081"
 
     //本地连接配置
     //public static final String BASE_URL = "http://10.0.2.2:8081";
+    //自己进行本地测试时，BASE_URL = "http://本地局域网IP:8081"
 }

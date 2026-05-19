@@ -9,14 +9,18 @@ public class ServerConfig {
     //云端配置
     // PK 房间控制接口地址：创建房间、加入房间、准备、提交成绩等。
     public static final String HTTP_BASE_URL =  "http://120.77.207.97:8081";
+    //自己部署云端时，BASE_URL = "http://云服务器公网IP:8081"
 
     // PK 实时同步地址：用于 WebSocket 分数/生命值同步。
     public static final String WS_BASE_URL = "ws://120.77.207.97:8082/pk/ws";
+    //自己部署云端时，BASE_URL = "ws://云服务器公网IP:8081"
 
     //本地测试配置
     //public static final String WS_BASE_URL = "ws://10.0.2.2:8082";
+    //自己进行本地测试时，BASE_URL = "ws://本地局域网IP:8081"
 
     //public static final String HTTP_BASE_URL = "http://10.0.2.2:8081";
+    //自己进行本地测试时，BASE_URL = "http://本地局域网IP:8081"
 
     private ServerConfig() {
     }
