@@ -27,11 +27,11 @@ AirWar Android 是一个前后端分离的移动端空战游戏：
 
 | 登录 / 注册                         | 主流程总览                                      | 皮肤商店                               |
 | ------------------------------- | ------------------------------------------ | ---------------------------------- |
-| ![login](docs/images/login.png) | ![overview](docs/images/overview-flow.png) | ![shop](docs/images/skin-shop.png) |
+| ![login](docus/images/login.png) | ![overview](docus/images/overview-flow.png) | ![shop](docus/images/skin-shop.png) |
 
 | 总排行榜                                     | 联机房间                                      | 联机 PK                          |
 | ---------------------------------------- | ----------------------------------------- | ------------------------------ |
-| ![ranking](docs/images/ranking-menu.png) | ![room](docs/images/room-create-join.png) | ![pk](docs/images/pk-game.png) |
+| ![ranking](docus/images/ranking-menu.png) | ![room](docus/images/room-create-join.png) | ![pk](docus/images/pk-game.png) |
 
 ---
 
